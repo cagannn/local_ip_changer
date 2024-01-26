@@ -12,9 +12,9 @@ interface=input("[+]What type of interface do you use (eth0, wlan0):")
 try:
 	while True:
 		random_ip='192.168.'+str(random.randint(0,256))+"."+str(random.randint(0,256))
-		time.sleep(second)
 		os.system('ifconfig '+interface+" "+random_ip)
 		print('[+]Your ip address changed as '+random_ip)
+		time.sleep(second)
 except KeyboardInterrupt:
 	os.system("service networking restart")
 	os.system("service NetworkManager restart")
